@@ -1,11 +1,22 @@
 import React from "react";
-import { Menu, Input, Button } from "antd";
+import { Menu, Input, Row, Col } from "antd";
 import Link from "next/link";
 import PropTypes from "prop-types";
+import LoginForm from "./LoginForm";
+import Login from "./Login";
+
+const dummy = {
+  nickname: "김범규",
+  Post: [],
+  Followngs: [],
+  Follwers: [],
+  isLoggedIn: true
+};
 
 const style = { mid: { verticalAlign: "middle" } };
 
 const AppLayout = ({ children }) => {
+  const { Post, Followngs, Follwers, nickname } = dummy;
   return (
     <div>
       <Menu mode="horizontal">
@@ -23,12 +34,25 @@ const AppLayout = ({ children }) => {
           <Input.Search enterButton style={style.mid} />
         </Menu.Item>
       </Menu>
-      <Link href="/signup">
-        <a>
-          <Button>회원가입</Button>
-        </a>
-      </Link>
-      {children}
+
+      <Row>
+        <Col xs={24} md={6}>
+          {dummy.isLoggedIn ? (
+            <Login
+              Post={Post}
+              Followngs={Followngs}
+              Follwers={Follwers}
+              nickname={nickname}
+            />
+          ) : (
+            <LoginForm />
+          )}
+        </Col>
+        <Col xs={24} md={12}>
+          {children}
+        </Col>
+        <Col xs={24} md={6} />
+      </Row>
     </div>
   );
 };
@@ -36,4 +60,5 @@ const AppLayout = ({ children }) => {
 AppLayout.propTypes = {
   children: PropTypes.node
 };
+
 export default AppLayout;
