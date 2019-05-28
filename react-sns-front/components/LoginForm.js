@@ -13,7 +13,7 @@ const LoginForm = () => {
     [id, password]
   );
   return (
-    <Form onSubmit={onSubmitForm}>
+    <Form onSubmit={onSubmitForm} style={{ padding: "10px" }}>
       <div>
         <label htmlFor="user-id">아이디</label>
         <Input name="user-id" value={id} onChange={onChangeId} required />
