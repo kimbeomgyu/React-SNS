@@ -7,7 +7,8 @@ const NodeBird = ({ Component }) => {
   return (
     <>
       <Head>
-        <title>NodeBird</title>
+        <title>React - SNS</title>
+        <link rel="shortcut icon" href="../static/favicon.ico" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css"
