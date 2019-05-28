@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Avatar } from "antd";
 import PropTypes from "prop-types";
 
-const Login = ({ Post, Followings, Follwers, nickname }) => {
+const Login = ({ Post, Followings, Followers, nickname }) => {
   return (
     <Card
       actions={[
@@ -19,7 +19,7 @@ const Login = ({ Post, Followings, Follwers, nickname }) => {
         <div key="follower">
           팔로워
           <br />
-          {Follwers.length}
+          {Followers.length}
         </div>
       ]}
     >
@@ -31,7 +31,7 @@ const Login = ({ Post, Followings, Follwers, nickname }) => {
 Login.propTypes = {
   Post: PropTypes.array,
   Followings: PropTypes.array,
-  Follwers: PropTypes.array,
+  Followers: PropTypes.array,
   nickname: PropTypes.string
 };
 

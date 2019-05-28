@@ -8,7 +8,7 @@ import Login from "./Login";
 const dummy = {
   nickname: "김범규",
   Post: [],
-  Follwers: ["wp1rndur", "pjj0714", "doheekang"],
+  Followers: ["wp1rndur", "pjj0714", "doheekang"],
   Followings: ["wp1rndur", "pjj0714", "doheekang"],
   isLoggedIn: true
 };
@@ -16,7 +16,7 @@ const dummy = {
 const style = { mid: { verticalAlign: "middle" } };
 
 const AppLayout = ({ children }) => {
-  const { Post, Followings, Follwers, nickname } = dummy;
+  const { Post, Followings, Followers, nickname, isLoggedIn } = dummy;
   return (
     <div>
       <Menu mode="horizontal">
@@ -37,11 +37,11 @@ const AppLayout = ({ children }) => {
 
       <Row gutter={20}>
         <Col xs={24} md={6}>
-          {dummy.isLoggedIn ? (
+          {isLoggedIn ? (
             <Login
               Post={Post}
-              Following={Followings}
-              Follwers={Follwers}
+              Followings={Followings}
+              Followers={Followers}
               nickname={nickname}
             />
           ) : (
