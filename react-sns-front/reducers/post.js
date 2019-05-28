@@ -1,9 +1,17 @@
-export const initialState = {
-  mainPosts: []
-};
-
 const ADD_POST = "ADD_POST";
 const ADD_DUMMY = "ADD_DUMMY";
+
+export const initialState = {
+  imagePaths: [],
+  mainPosts: [
+    {
+      User: { id: 1, nickname: "김범규" },
+      content: "첫번째 게시글",
+      img: "https://cdn.stocksnap.io/img-thumbs/960w/26OLIALPKJ.jpg"
+    },
+    { User: { id: 1, nickname: "김범규" }, content: "두번째 게시글" }
+  ]
+};
 
 const addPost = {
   type: ADD_POST

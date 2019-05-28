@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import NicknameEdit from "../components/NicknameEdit";
 import FollowList from "../components/FollowList";
-
-const dummy = {
-  Followings: ["wp1rndur", "pjj0714", "doheekang"],
-  Followers: ["wp1rndur", "pjj0714", "doheekang"]
-};
+import { loginAction } from "../reducers/user";
 
 const Profile = () => {
-  const { Followers, Followings } = dummy;
+  const { user } = useSelector(({ user }) => user);
+  const { Followers, Followings } = user;
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(loginAction), []);
+
   return (
     <div>
       <NicknameEdit />

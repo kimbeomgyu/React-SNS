@@ -4,19 +4,14 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 import LoginForm from "./LoginForm";
 import Login from "./Login";
-
-const dummy = {
-  nickname: "김범규",
-  Post: [],
-  Followers: ["wp1rndur", "pjj0714", "doheekang"],
-  Followings: ["wp1rndur", "pjj0714", "doheekang"],
-  isLoggedIn: true
-};
+import { useSelector } from "react-redux";
 
 const style = { mid: { verticalAlign: "middle" } };
 
 const AppLayout = ({ children }) => {
-  const { Post, Followings, Followers, nickname, isLoggedIn } = dummy;
+  const { isLoggedIn, user } = useSelector(({ user }) => user);
+  const { Post, Followings, Followers, nickname } = user;
+
   return (
     <div>
       <Menu mode="horizontal">

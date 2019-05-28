@@ -12,6 +12,7 @@ const LoginForm = () => {
     },
     [id, password]
   );
+
   return (
     <Form onSubmit={onSubmitForm} style={{ padding: "10px" }}>
       <div>
